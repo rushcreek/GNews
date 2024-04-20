@@ -175,7 +175,7 @@ class GNews:
     def country(self, country):
         self._country = AVAILABLE_COUNTRIES.get(country, country)
 
-    def get_full_article(self, url):
+    def get_full_article(self, url, config):
         """
         Download an article from the specified URL, parse it, and return an article object.
          :param url: The URL of the article you wish to summarize.
@@ -189,7 +189,7 @@ class GNews:
             return None
     
         try:
-            article = newspaper.Article(url="%s" % url, language=self._language)
+            article = newspaper.Article(url="%s" % url, config=config)
             article.download()
             article.parse()
         except Exception as error:
