@@ -175,7 +175,7 @@ class GNews:
     def country(self, country):
         self._country = AVAILABLE_COUNTRIES.get(country, country)
 
-    def get_full_article(self, url, config):
+    def get_full_article(self, url, config=None):
         """
         Download an article from the specified URL, parse it, and return an article object.
          :param url: The URL of the article you wish to summarize.
